@@ -43,10 +43,8 @@ componentDidMount:function(){
         
     },_onAddAnswer:function(answerText){
 
-        ForumDispatcher.dispatch({
-            actionType:"FORUM_ANSWER_ADDED",
-            newAnswer:answerText}
-            );
+        ForumActions.addNewAnswer(answerText);
+
     }
     
 });

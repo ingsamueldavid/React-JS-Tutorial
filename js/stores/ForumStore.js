@@ -64,14 +64,14 @@ function evaluateDispatchedActions(action){
 
         switch(action.actionType){
 
-            case 'FORUM_ANSWER_ADDED':{
+            case ForumConstants.FORUM_ANSWER_ADDED:{
                 console.log('ANswer added!');
                 ForumStore.addAnswers(action.newAnswer);
                 break;
             }
 
 
-            case 'FORUM_ANSWER_MARKED_CORRECT':{
+            case ForumConstants.FORUM_ANSWER_MARKED_CORRECT:{
                console.log('answer marked correct!');
                 ForumStore.markAsCorrect(action.id);
                 break;
