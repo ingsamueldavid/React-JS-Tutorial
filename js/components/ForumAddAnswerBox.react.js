@@ -1,20 +1,16 @@
 var ForumAddAnswerBox = React.createClass({
-	getInitialState: function() {
-        
-        return {
-            value: ''
-        };
-        
-    },
+	
 	_addAnswer:function(){
-			this.props.onAddAnswer(this.state.value);
+			
+			var textAreaText = this.myTextArea.value
+			this.props.onAddAnswer(textAreaText);
 		},
 
 	render:function(){
 
 		return (
 			<div>
-				  <textarea id="addAnswer" className="col-md-6 col-xs-8" onChange={this._onChange}></textarea>
+				  <textarea id="addAnswer" className="col-md-6 col-xs-8" ref={ (ref) => this.myTextArea = ref} ></textarea>
                     &nbsp;
                    <input type="button" className="btn btn-primary" value="Add" onClick={this._addAnswer}/>
 			</div>
@@ -22,14 +18,6 @@ var ForumAddAnswerBox = React.createClass({
 
 
 
-	},
-	_onChange:function(event){
-		var textAreaText =event.target.value
-		this.setState({value:textAreaText});
-
 	}
-
-
-
 
 });

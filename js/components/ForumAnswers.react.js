@@ -11,7 +11,8 @@ var ForumAnswers = React.createClass({
 		let answers = [];
 
 				for(let key in allAnswers){
-					let individualAnswer = <ForumAnswer key={key} id={key} answer={allAnswers[key]} onMarkCorrect={this._onMarkCorrect}/>
+
+					let individualAnswer = <ForumAnswer key={key} id={key} answer={allAnswers[key]} onMarkCorrect={ () => {this._onMarkCorrect(key) }} />
 					answers.push(individualAnswer);
 
 

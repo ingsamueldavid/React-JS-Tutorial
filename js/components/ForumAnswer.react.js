@@ -6,10 +6,7 @@ var ForumAnswer = React.createClass({
 		onMarkCorrect:React.PropTypes.func.isRequired
 
 	},
-	_MarkCorrect:function(){
-		this.props.onMarkCorrect(this.props.id);
 
-	},
 	render:function(){
 		var answer = this.props.answer;
 
@@ -18,7 +15,8 @@ var ForumAnswer = React.createClass({
 		markAnswer = (<div className="pull-right">
 
 						<small> 
-						<a href="#" onClick={this._MarkCorrect}>Mark as correct </a>
+						<a href="#" onClick={
+							this.props.onMarkCorrect}>Mark as correct </a>
 						</small>
 
 					</div>);
