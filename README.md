@@ -10,6 +10,10 @@ $ npm install
 
 then
 
-open up index.htm on your favorite browser
+node server.js
+
+then navigate to localhost:3000
+
+(or your equivalent localhost ip address)
 
 

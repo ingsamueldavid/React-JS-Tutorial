@@ -12,17 +12,32 @@ var Forum = React.createClass({
     getInitialState: function() {
         
         return {
-            allAnswers: ForumStore.getAnswers()
+            allAnswers: []
         }
+
         
     },
 
     _onChange:function(){
-        this.setState({allAnswers:ForumStore.getAnswers()})
+
+
+        ForumStore.getAnswers().done((data)=>{
+
+            this.setState({allAnswers:data})
+    
+        });
+     
 
     },
 componentDidMount:function(){
-        ForumStore.addChangeListener(this._onChange);
+
+  ForumStore.addChangeListener(this._onChange);
+  ForumStore.getAnswers().done((data)=>{
+
+    this.setState({allAnswers:data})
+    
+  });
+  
 
 },
    componentWillUnmount:function(){

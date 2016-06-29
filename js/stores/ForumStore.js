@@ -1,8 +1,7 @@
 var EventEmitter = require('events').EventEmitter;
 var ForumDispatcher = require('../Dispatcher/ForumDispatcher');
 var ForumConstants = require('../constants/ForumConstants');
-
-var AnswersData= {
+var AnswersData = {
                 "1": {
                     body: "Isn't that about time travel?",
                     correct: false
@@ -32,9 +31,10 @@ ForumStore.addChangeListener = function(listener){
 
 
 ForumStore.getAnswers = function(){
+    debugger;
 
-    return AnswersData;
-
+    return $.getJSON('/api/AnswerData');
+   
 }   
 
 
