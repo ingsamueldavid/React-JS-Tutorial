@@ -6,7 +6,7 @@ answers can be marked as correct with a little green tone (thanks bootstrap)
 
 
 before starting..
-$npm install
+$ npm install
 
 then
 
