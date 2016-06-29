@@ -1,3 +1,7 @@
+var EventEmitter = require('events').EventEmitter;
+var ForumDispatcher = require('../Dispatcher/ForumDispatcher');
+var ForumConstants = require('../constants/ForumConstants');
+
 var AnswersData= {
                 "1": {
                     body: "Isn't that about time travel?",
@@ -81,3 +85,5 @@ function evaluateDispatchedActions(action){
 }
 
 ForumDispatcher.register(evaluateDispatchedActions);
+
+module.exports = ForumStore;

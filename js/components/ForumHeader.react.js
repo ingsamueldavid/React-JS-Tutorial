@@ -1,3 +1,7 @@
+
+var React = require('react');
+
+
 var ForumHeader = React.createClass({
     
     render: function() {
@@ -17,32 +21,6 @@ var ForumHeader = React.createClass({
 
             );
 
-
-
-
-    //     React.createElement(
-    //         "nav", {
-    //             className: "navbar navbar-default"
-    //         },
-    //         React.createElement(
-    //             "div", {
-    //                 className: "container-fluid"
-    //             },
-    //             React.createElement(
-    //                 "div", {
-    //                     className: "navbar-header"
-    //                 },
-    //                 React.createElement(
-    //                     "a", {
-    //                         className: "navbar-brand",
-    //                         href: "#"
-    //                     },
-    //                     "React Forum"
-    //                 )
-    //             )
-    //         )
-    //     );
-        
-    // }
-
 }});
+
+module.exports = ForumHeader;

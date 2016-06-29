@@ -1,3 +1,12 @@
+var React = require('react');
+var ForumHeader = require('./ForumHeader.react');
+var ForumQuestion = require('./ForumQuestion.react');
+var ForumAnswers = require('./ForumAnswers.react');
+var ForumAddAnswerBox = require('./ForumAddAnswerBox.react');
+var ForumActions = require('../actions/ForumActions');
+var ForumStore = require('../stores/ForumStore');
+
+
 var Forum = React.createClass({
     
     getInitialState: function() {
@@ -49,4 +58,4 @@ componentDidMount:function(){
     
 });
 
-///TODO stuff
+module.exports = Forum;

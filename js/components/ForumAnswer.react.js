@@ -1,3 +1,6 @@
+
+var React = require('react');
+
 var ForumAnswer = React.createClass({
 
 	propTypes:{
@@ -16,7 +19,7 @@ var ForumAnswer = React.createClass({
 
 						<small> 
 						<a href="#" onClick={
-							this.props.onMarkCorrect}>Mark as correct </a>
+							         this.props.onMarkCorrect}>Mark as correct </a>
 						</small>
 
 					</div>);
@@ -47,3 +50,5 @@ var ForumAnswer = React.createClass({
 
 
 });
+
+module.exports = ForumAnswer;

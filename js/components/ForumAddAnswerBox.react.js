@@ -1,3 +1,5 @@
+var React = require('react');
+
 var ForumAddAnswerBox = React.createClass({
 	
 	_addAnswer:function(){
@@ -21,3 +23,5 @@ var ForumAddAnswerBox = React.createClass({
 	}
 
 });
+
+module.exports = ForumAddAnswerBox;
