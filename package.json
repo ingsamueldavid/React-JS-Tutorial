@@ -2,7 +2,7 @@
   "name": "react",
   "version": "1.0.0",
   "main": "index.js",
-   "scripts": {
+  "scripts": {
     "start": "watchify js/app.js -o lib/app.js"
   },
   "author": "Samy",
@@ -14,11 +14,22 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
     "flux": "^2.1.1",
     "react": "^0.14.6",
     "react-dom": "^0.14.6"
   },
   "browserify": {
-    "transform": [["babelify", { "presets": ["react"] }]]
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "react"
+          ]
+        }
+      ]
+    ]
   }
 }

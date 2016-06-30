@@ -1,21 +1,7 @@
 var EventEmitter = require('events').EventEmitter;
 var ForumDispatcher = require('../Dispatcher/ForumDispatcher');
 var ForumConstants = require('../constants/ForumConstants');
-var AnswersData = {
-                "1": {
-                    body: "Isn't that about time travel?",
-                    correct: false
-                },
-                "2": {
-                    body: "React and Flux are a tool and methodologies for building the front end of web applications.",
-                    correct: false
-                },
-                "3": {
-                    body: "React is a synonym for 'respond'",
-                    correct: false
-                }
-            }
-        
+
 
 
 var ForumStore = new EventEmitter();
@@ -31,36 +17,27 @@ ForumStore.addChangeListener = function(listener){
 
 
 ForumStore.getAnswers = function(){
-    debugger;
 
-    return $.getJSON('/api/AnswerData');
-   
+    return $.getJSON('/api/AnswerData');   
 }   
 
 
 
 ForumStore.addAnswers = function(newAnswer){
 
-    AnswersData[Object.keys(AnswersData).length+1] = {
-        body:newAnswer,
-        correct:false
-    };
-
-    this.emit('change');
+    $.post( "/api/AddAnswer", { newAnswer: newAnswer} ).done( data => {
+          ForumStore.emit('change');
+    });
 
 }  
 
 
 ForumStore.markAsCorrect = function(id){
 
-    for(key in AnswersData){
-        AnswersData[key].correct = false;
-
-    }
-
-    AnswersData[id].correct=true;
-
-    this.emit('change');
+   $.post( "/api/MarkAsCorrect", { id: id} ).then( data => {
+          console.log(data);
+          ForumStore.emit('change');
+    });
 
 }      
 
